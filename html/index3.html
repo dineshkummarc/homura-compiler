@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+	<title>Compiler at KBTU</title>
+
+	<link rel="stylesheet" href="css/style.css" /><!-- Main Lar -->
+
+	<script type="text/javascript" src="scripts/jquery-1.6.1.min.js"></script>
+	<!-- End JQuery and Scripts-->
+
+	<script>
+		$(document).ready(function(){
+ 
+			$('#assd').bind('contextmenu',function(e){
+				var $cmenu = $(this).next();
+				$('<div class="overlay"></div>').css({left : '0px', top : '0px',position: 'absolute', width: '100%', height: '100%', zIndex: '2000' }).click(function() {
+					$(this).remove();$cmenu.hide();
+				}).bind('contextmenu' , function(){$(this).remove();$cmenu.hide(); return false; }).appendTo(document.body);
+				$(this).next().css({ left: e.pageX, top: e.pageY, zIndex: '2001' }).show();
+ 				return false;
+			});
+ 
+		});
+	</script>
+
+	<style>
+	  .asd { float:left; width:112px; padding: 3px 4px;}
+	  .asd:hover { background: #ddf; cursor: pointer; }
+	</style>
+
+</head>
+
+<body>
+    <header><!-- Start Header -->
+		<!-- Start Header Middle -->
+		<div id="header_middle">
+			<div class="container">
+				<div id="topright">
+					<a href="#">Enter</a> |
+					<a href="">Register</a>
+				</div>
+				<div id="primary">
+					<nav><!-- Start Navigation -->
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#">About</a></li>
+						</ul>
+					</nav><!-- End Navigation -->
+				</div>
+				<div id="secondary">
+					<div id="slogan" style="margin-top:20px">
+						<a href="#" id="logo"><span style="font-size: 96px;">C</span>ompiler</a> 
+						<div style="clear:both"></both>
+						<p style="float:left; margin-top:47px; font-size:18px;">at <a style="color:inherit;" href="http://kbtu.kz">kbtu.kz</a></p>
+ 				    </div>
+				</div>
+			</div>
+		</div>
+ 	</header><!-- END HEADER -->
+	
+	<section><!-- BEGIN SECTION MAIN CONTENT -->
+
+	<div style="width: 200px; border:1px solid red; height:40px; margin: 0 auto;" id="assd"></div>
+
+	<div style="border:1px solid #aaa; position: absolute; background: #FFF; font-size:18px; width: 120px; display: none; ">
+		<div class="asd">Asd</div>
+		<div class="asd">Some text</div>
+		<div class="asd">Copy</div>
+		<div class="asd">Delete</div>
+		<div style="clear:both"></div>
+	</div>
+	
+	</section><!-- END SECTION MAIN CONTENT -->
+
+
+
+	<footer><!-- BEGIN FOOTER -->
+		<div class="container light">
+			<div class="box fifth">
+				<h3>Sample codes</h3>
+				<ul>
+					<li><a href="#">C++</a></li>
+					<li><a href="#">C#</a></li>
+					<li><a href="#">Java</a></li>
+					<li><a href="#">Python</a></li>
+				</ul>
+			</div>
+			<div class="box fourth">
+				<h3>Downloads</h3>
+				<p>Download compilers here.</p>
+				<div class="download_compilers">
+					<a href="#"><img src="images/java_128.png" alt="Java 7" width="32" height="32"/></a>
+					<a href="#"><img src="images/cpp_128.png" alt="MinGW: GNU/C++" width="32" height="32"/></a>
+					<a href="#"><img src="images/cs_128.png" alt="C#" width="32" height="32"/></a>
+					<a href="#"><img src="images/python_128.png" alt="Python 2.7" width="32" height="32"/></a>
+				</div>
+			</div>
+			<div class="box fourth">
+				<h3>Links</h3>
+				<ul>
+					<li><a href="http://e-maxx.ru">e-maxx aлгоритмы</a></li>
+					<li><a href="http://acmp.ru">Школа программиста</a></li>
+					<li><a href="http://acm.mipt.ru/judge/" alt="Online соревнование по программированию">acm.mipt.ru</a></li>
+				</ul>
+			</div>
+
+			<div class="box fifth">
+				<h3>Contact Us</h3>
+				<form id="contact" method="post" action="">
+				<fieldset>    
+					<p>
+						<label for="name">Name</label>
+						<input type="text" name="name">
+					</p>
+					<p>
+						<label for="email">E-mail</label>
+						<input type="email" name="email">
+						<label for="message">Message</label>
+						<textarea name="message"></textarea>
+						<input type="submit" name="submit" id="submit" value="Send Message" />
+					</p>
+				</fieldset>
+				</form>
+			</div>
+
+			<div class="box copyright">
+				<h6> Copyright &copy; 2011 <br>All Rights Reserved</h6>
+			</div>
+		</div>
+	</footer><!-- END FOOTER -->
+</body>
+</html>

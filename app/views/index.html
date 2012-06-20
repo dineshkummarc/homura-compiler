@@ -1,0 +1,108 @@
+$def with (issigned=False)
+
+<section><!-- BEGIN SECTION MAIN CONTENT -->
+	<div class="container" style="min-height:500px;">
+
+
+			$if issigned:
+				<div class="area" style="width:1020px">
+			$else:
+				<div class="area">
+	
+			$if issigned:
+				<div class="right-cntr">
+					<div><div id="new" class="link" style="float:left; margin-bottom:10px; margin-top:10px; background:#fff;">New</div> </div>
+					<div id="jqft" class="jqfiletree"></div>
+					<div class="contextmenu" id="jqftcontext">
+						<div class="menuitem" id="ftc_rename">Rename</div>
+						<div class="menuitem" id="ftc_delete">Delete</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+
+			<div class="incntr">
+				<table class="area-top">
+					<tr>
+						<th width="120px"><label for="language">Language</label></th>
+							<td>
+							<select id="language" name="language">
+								<option value="java" mode="java" ext="java">Java</option>
+								<option value="csharp" mode="csharp" ext="cs">C#</option>
+								<option value="cpp" mode="c_cpp" ext="cpp">C++</option>
+							</select>
+						</td>
+					</tr>
+
+					<form id="lsff_form" action="/return" method="POST" enctype="multipart/form-data">
+					<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+					<iframe id="upload_target" name="upload_target" src="" style="width:0;height:0;border:0px solid 	#fff;"></iframe>
+
+					<tr>
+						<th><label for="source_file">Source file</label></th>
+						<td><input type="file" name="source_file"></td>
+					</tr>
+					<tr>
+						<th></th>
+						<td><input type="submit" value="Load from file" id="load-src-from-file"/></td>
+					</tr>
+					</form>
+				</table>
+				<a name="code"></a>
+				<div class="editor-container">
+					<center>Source code
+						$if issigned:
+							: <span id="source_name" style="font-weight:bold;" rel="0">Unnamed</span>
+					</center>
+					<div id="editor"></div>
+				</div>
+				<div>
+					<input type="button" value="Compile code" id="compile"/>
+					$if issigned:
+						<input type="button" value="Save" id="save" style="margin-left:30px;"/>
+				</div>
+
+				<a name="report"></a>
+				<h3>Compilation report:</h3>
+				<div id="report" class="report"></div>
+
+				<div id="input-output">
+					<h3>Input:</h3>
+					<div id="input" class="input">
+						<textarea name="input_src"></textarea>
+						<div>
+							Input file:<br/>
+							<input type="file" name="input_file"/>
+						</div>
+					</div>
+					<div style="clear: both"></div>
+					<div style="margin-top:10px">
+						<input type="button" value="Run code" name="runcode" id="runcode"/>
+					</div>
+					<h3>Output:</h3>
+					<div id="output" class="output"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="main_content">
+	</div>
+	<!--end holder-->
+</section><!-- END SECTION MAIN CONTENT -->
+
+<div class="mainloading">
+	<div><div>
+		<img src="/images/loading2.gif" width="128" height="128"/>
+	</div></div>
+</div>
+
+<div class="vmiddle" id="save_dialog">
+	<div class="dialog">
+		<label for="i_text">Source Name:</label>
+		<input type="text" id="i_text" style="width: 180px;" tabindex="1" />
+		<input type="button" value="Save" id="i_button" tabindex="2"/>
+		<input type="button" value="Cancel" id="i_button2" tabindex="3"/>
+	</div>
+</div>
+
+<div id="overlay0"></div>

@@ -1,0 +1,15 @@
+# use glob syntax.
+syntax: glob
+
+/store/
+/work/
+
+*.pyc
+*~
+
+# switch to regexp syntax.
+syntax: regexp
+^\.pc/
+
+.*work\/.*
+.*work\/.*
